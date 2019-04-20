@@ -1,4 +1,4 @@
-**Heads Up**
+**Heads Up
 This is a guide that helped me get MySql server up and running **MUCH** faster than the VMs. It’s especially nice if you’re off campus/having issues with the VMs. It allows you do do things locally with the power of your computer instead of the VM. 
 
 **What it do**
