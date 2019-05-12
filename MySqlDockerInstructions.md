@@ -4,7 +4,6 @@ This is a guide that helped me get MySql server up and running **MUCH** faster t
 **What it do**
 I ran this on Fedora 29 and have used a similar thing on the most recent OSX Mojave (I don’t wanna go check the exact version)
 
-
 If you don’t have docker downloaded and installed go ahead and do that
 
 Installation instructions for your OS from the documentation (they actually have good docs) <br>
@@ -17,6 +16,7 @@ Pull the docker image you want to use:
 ```console
 user@computer:~$ docker pull mysql/mysql-server
 ```
+
 ![mysqlDocker1](https://user-images.githubusercontent.com/10457502/57586762-0d8ca080-74ea-11e9-99be-315ac9273b0a.png)
 
 This will create the directory  where you want to store the database information and such
@@ -64,8 +64,8 @@ Bam! Drops you into a root shell
 _**Note**: to exit bash type `exit`_
 
 Now to use mysql:
-```console
-bash-0.0:# mysql -uroot -p
+```bash
+mysql -uroot -p
 ```
 
 Or
@@ -76,7 +76,7 @@ mysql -p
 ![mysqlDocker6](https://user-images.githubusercontent.com/10457502/57586767-0e253700-74ea-11e9-9c65-2b1fad6f96b4.png)
 
 It will prompt you for a password. That will be the password you supplied in the first part. 
-In the mysql prompt you now can do your thing
+In the mysql prompt you now can do your thing <br>
 _**Note** to exit mysql type `quit`_
 
 To show databases:
@@ -93,6 +93,7 @@ To create a user:
 ```mysql
 CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
 ```
+
 Also according this the default password hashing mechanism in 8+ is sha2 which meets the encrypted format specs for *this section* <br>
 
 https://dev.mysql.com/doc/mysql-security-excerpt/8.0/en/caching-sha2-pluggable-authentication.html 
