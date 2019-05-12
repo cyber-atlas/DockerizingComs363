@@ -43,7 +43,7 @@ For mypassword obviously you want to put something different
 > `-v` maps a volume (directory) on your drive to a volume on the machine `<your volume>` : `<docker machine’s volume>`
 > `-e` sets environment variables of your machine, in this case the mysql root password
 
-_*Note*: I did not set a password since I already have one_
+_**Note**: I did not set a password since I already have one_
 
 Let’s see if the container is running :
 ```
@@ -61,7 +61,7 @@ docker exec -it <container name> bash
 
 Bam! Drops you into a root shell 
 
-_*Note*: to exit bash type `exit`_
+_**Note**: to exit bash type `exit`_
 
 Now to use mysql:
 ```
