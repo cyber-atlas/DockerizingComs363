@@ -103,6 +103,7 @@ Show the users and what hosts they can connect from:
 SELECT host, user FROM mysql.user;
 ```
 It will display a table, for example like this:
+```
 +------------+------------------+
 | host       | user             |
 +------------+------------------+
@@ -113,7 +114,7 @@ It will display a table, for example like this:
 | localhost  | root             |
 | localhost  | sonar            |
 +------------+------------------+
-
+```
 It has to contain a line with your database user and '%' to works (% means "every IP addresses are allowed"). Example:
 +------------+------------------+
 | host       | user             |
