@@ -20,14 +20,14 @@ user@computer:~$ docker pull mysql/mysql-server
 ![mysqlDocker1](https://user-images.githubusercontent.com/10457502/57586762-0d8ca080-74ea-11e9-99be-315ac9273b0a.png)
 
 This will create the directory  where you want to store the database information and such
-```
-mkdir -p /data/mysql
+```console
+user@computer:~$ mkdir -p /data/mysql
 ```
 ![mysqlDocker2](https://user-images.githubusercontent.com/10457502/57586763-0e253700-74ea-11e9-9721-7edabec97458.png)
 
 Run the docker image
-```
-docker run -d -p 3306:3306 -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mypassword mysql/mysql-server 
+```console
+user@computer:~$ docker run -d -p 3306:3306 -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mypassword mysql/mysql-server 
 ```
 
 ![mysqlDocker3](https://user-images.githubusercontent.com/10457502/57586764-0e253700-74ea-11e9-97a4-32739290a93b.png)
@@ -46,15 +46,15 @@ For mypassword obviously you want to put something different
 _**Note**: I did not set a password since I already have one_
 
 Let’s see if the container is running :
-```
-docker container ls
+```console
+user@computer:~$ docker container ls
 ```
 
 ![mysqlDocker4](https://user-images.githubusercontent.com/10457502/57586765-0e253700-74ea-11e9-9720-03c418c758f9.png)
 
 Now that the container is running you want to be able to use it:
-```
-docker exec -it <container name> bash
+```console
+user@computer:~$ docker exec -it <container name> bash
 ```
 
 ![mysqlDocker5](https://user-images.githubusercontent.com/10457502/57586766-0e253700-74ea-11e9-85c2-62dd36d47ae6.png)
@@ -64,8 +64,8 @@ Bam! Drops you into a root shell
 _**Note**: to exit bash type `exit`_
 
 Now to use mysql:
-```
-mysql -uroot -p
+```console
+bash-0.0# mysql -uroot -p
 ```
 
 Or
@@ -80,23 +80,23 @@ In the mysql prompt you now can do your thing
 *Note to exit mysql type `quit`
 
 To show databases:
-```
+```mysql
 show databases;
-```
+```mysql
 To create databases:
 ```
 CREATE DATABASE databaseName;
-```
+```mysql
 To create a user:
-```
+```mysql
 CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
 ```
-Also according this the default password hashing mechanism in 8+ is sha2 which meets the encrypted format specs for *this section*
+Also according this the default password hashing mechanism in 8+ is sha2 which meets the encrypted format specs for *this section* <br>
 
 https://dev.mysql.com/doc/mysql-security-excerpt/8.0/en/caching-sha2-pluggable-authentication.html 
 
 Give the user privileges:
-```
+```mysql
 GRANT ALL PRIVILEGES ON databaseName.* TO ‘<user>’@'localhost';
 FLUSH PRIVILEGES;
 QUIT
