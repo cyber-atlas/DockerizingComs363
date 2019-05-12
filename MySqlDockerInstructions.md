@@ -77,16 +77,18 @@ mysql -p
 
 It will prompt you for a password. That will be the password you supplied in the first part. 
 In the mysql prompt you now can do your thing
-*Note to exit mysql type `quit`
+_**Note** to exit mysql type `quit`_
 
 To show databases:
 ```mysql
 show databases;
-```mysql
-To create databases:
 ```
-CREATE DATABASE databaseName;
+
+To create databases:
 ```mysql
+CREATE DATABASE databaseName;
+```
+
 To create a user:
 ```mysql
 CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
@@ -101,10 +103,12 @@ GRANT ALL PRIVILEGES ON databaseName.* TO ‘<user>’@'localhost';
 FLUSH PRIVILEGES;
 QUIT
 ```
+
 Show the users and what hosts they can connect from:
-```
+```mysql
 SELECT host, user FROM mysql.user;
 ```
+
 It will display a table, for example like this:
 ```
 +------------+------------------+
@@ -131,13 +135,13 @@ It has to contain a line with your database user and '%' to works (% means "ever
 https://stackoverflow.com/questions/16287559/mysql-adding-user-for-remote-access
 
 How to create a user to use to connect to your database:
-```
+```mysql
 CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypass';
 CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';
 ```
 
 Now give them some privileges:
-```
+```mysql
 GRANT ALL ON *.* TO 'myuser'@'localhost';
 GRANT ALL ON *.* TO 'myuser'@'%';
 ```
