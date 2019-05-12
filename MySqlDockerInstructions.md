@@ -65,7 +65,7 @@ _**Note**: to exit bash type `exit`_
 
 Now to use mysql:
 ```console
-bash-0.0# mysql -uroot -p
+bash-0.0:# mysql -uroot -p
 ```
 
 Or
@@ -81,7 +81,7 @@ _**Note** to exit mysql type `quit`_
 
 To show databases:
 ```mysql
-show databases;
+SHOW DATABASES;
 ```
 
 To create databases:
