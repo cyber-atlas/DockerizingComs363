@@ -69,7 +69,7 @@ bash-0.0:# mysql -uroot -p
 ```
 
 Or
-```
+```shell
 mysql -p
 ```
 
