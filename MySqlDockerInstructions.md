@@ -7,14 +7,14 @@ I ran this on Fedora 29 and have used a similar thing on the most recent OSX Moj
 
 If you don’t have docker downloaded and installed go ahead and do that
 
-Installation instructions for your OS from the documentation (they actually have good docs)
+Installation instructions for your OS from the documentation (they actually have good docs) <br>
 https://docs.docker.com/install/ 
 
-I used this for most of it:
+I used this for most of it: <br>
 https://www.serverlab.ca/tutorials/containers/docker/how-to-run-mysql-server-8-in-a-docker-container/
 
 Pull the docker image you want to use:
-```
+```console
 docker pull mysql/mysql-server
 ```
 ![mysqlDocker1](https://user-images.githubusercontent.com/10457502/57586762-0d8ca080-74ea-11e9-99be-315ac9273b0a.png)
