@@ -1,7 +1,7 @@
-**Heads Up**
+## Heads Up
 This is a guide that helped me get MySql server up and running **MUCH** faster than the VMs. It’s especially nice if you’re off campus/having issues with the VMs. It allows you do do things locally with the power of your computer instead of the VM. 
 
-**What it do**
+## What it do
 I ran this on Fedora 29 and have used a similar thing on the most recent OSX Mojave (I don’t wanna go check the exact version)
 
 If you don’t have docker downloaded and installed go ahead and do that
@@ -12,6 +12,7 @@ https://docs.docker.com/install/
 I used this for most of it: <br>
 https://www.serverlab.ca/tutorials/containers/docker/how-to-run-mysql-server-8-in-a-docker-container/
 
+## How It Do
 Pull the docker image you want to use:
 ```console
 user@computer:~$ docker pull mysql/mysql-server
