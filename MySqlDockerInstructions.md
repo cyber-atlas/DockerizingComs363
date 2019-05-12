@@ -43,7 +43,7 @@ For mypassword obviously you want to put something different
 > `-v` maps a volume (directory) on your drive to a volume on the machine `<your volume>` : `<docker machine’s volume>`
 > `-e` sets environment variables of your machine, in this case the mysql root password
 
-*Note: I did not set a password since I already have one
+_*Note*: I did not set a password since I already have one_
 
 Let’s see if the container is running :
 ```
@@ -56,15 +56,18 @@ Now that the container is running you want to be able to use it:
 ```
 docker exec -it <container name> bash
 ```
-**TODO Add the image here**
+
+![mysqlDocker5](https://user-images.githubusercontent.com/10457502/57586766-0e253700-74ea-11e9-85c2-62dd36d47ae6.png)
 
 Bam! Drops you into a root shell 
 
-*Note: to exit bash type `exit`
+_*Note*: to exit bash type `exit`_
+
 Now to use mysql:
 ```
 mysql -uroot -p
 ```
+
 Or
 ```
 mysql -p
@@ -115,12 +118,15 @@ It will display a table, for example like this:
 | localhost  | sonar            |
 +------------+------------------+
 ```
+
 It has to contain a line with your database user and '%' to works (% means "every IP addresses are allowed"). Example:
+```
 +------------+------------------+
 | host       | user             |
 +------------+------------------+
 | %          | root             |
 +------------+------------------+
+```
 
 https://stackoverflow.com/questions/16287559/mysql-adding-user-for-remote-access
 
@@ -129,15 +135,14 @@ How to create a user to use to connect to your database:
 CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypass';
 CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';
 ```
+
 Now give them some privileges:
 ```
 GRANT ALL ON *.* TO 'myuser'@'localhost';
 GRANT ALL ON *.* TO 'myuser'@'%';
-
 ```
 
 Then just a connector like you normally would. In this case we’re running the server locally (easiest way). You can also connect remotely, but that involves port forwarding and setting up dynmaic dns or a static IP which I won’t get into.
-
 
 In my case I am running it in DataGrip, but you can use MySql Workbench or whatever floats your boat:
 
