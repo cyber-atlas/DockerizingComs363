@@ -33,13 +33,16 @@ user@computer:~$ docker run -d -p 3306:3306 -v /data/mysql:/var/lib/mysql -e MYS
 ![mysqlDocker3](https://user-images.githubusercontent.com/10457502/57586764-0e253700-74ea-11e9-97a4-32739290a93b.png)
 
 For mypassword obviously you want to put something different
+
 >Yes, I am well aware this horrible practice. Instead you should save the password as an environment variable and pass that in. When I tried that I had issues hence why it is not included. 
 
->## What this does:
+## What this does:
+
 > **`run`** tells docker to run the image you specify later <br>
 > **`-d`** tells docker to run the container to run in detached mode so you can still use your terminal<br>
 > **`-p`** tell docker to map your port 33306 to the machine port 3306 (default mysql port)<br>
->> Ex of a different port mapping would be `-p 1337:3306` which would map mysql container port 3306 to port 1337 of your machine <br><br>
+> > Ex of a different port mapping would be `-p 1337:3306` which would map mysql container port 3306 to port 1337 of your machine <br>
+
 > **`-v`** maps a volume (directory) on your drive to a volume on the machine `<your volume>` : `<docker machine’s volume>` <br>
 > **`-e`** sets environment variables of your machine, in this case the mysql root password <br>
 
