@@ -17,17 +17,20 @@ Pull the docker image you want to use:
 ```
 docker pull mysql/mysql-server
 ```
+![mysqlDocker1](https://user-images.githubusercontent.com/10457502/57586762-0d8ca080-74ea-11e9-99be-315ac9273b0a.png)
 
 This will create the directory  where you want to store the database information and such
 ```
 mkdir -p /data/mysql
 ```
+![mysqlDocker2](https://user-images.githubusercontent.com/10457502/57586763-0e253700-74ea-11e9-9721-7edabec97458.png)
 
 Run the docker image
 ```
 docker run -d -p 3306:3306 -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mypassword mysql/mysql-server 
 ```
 
+![mysqlDocker3](https://user-images.githubusercontent.com/10457502/57586764-0e253700-74ea-11e9-97a4-32739290a93b.png)
 
 For mypassword obviously you want to put something different
 >Yes, I am well aware this horrible practice. Instead you should save the password as an environment variable and pass that in. When I tried that I had issues hence why it is not included. 
