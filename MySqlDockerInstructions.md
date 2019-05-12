@@ -50,10 +50,13 @@ Let’s see if the container is running :
 docker container ls
 ```
 
+![mysqlDocker4](https://user-images.githubusercontent.com/10457502/57586765-0e253700-74ea-11e9-9720-03c418c758f9.png)
+
 Now that the container is running you want to be able to use it:
 ```
 docker exec -it <container name> bash
 ```
+**TODO Add the image here**
 
 Bam! Drops you into a root shell 
 
@@ -66,6 +69,8 @@ Or
 ```
 mysql -p
 ```
+
+![mysqlDocker6](https://user-images.githubusercontent.com/10457502/57586767-0e253700-74ea-11e9-9c65-2b1fad6f96b4.png)
 
 It will prompt you for a password. That will be the password you supplied in the first part. 
 In the mysql prompt you now can do your thing
@@ -135,4 +140,4 @@ Then just a connector like you normally would. In this case we’re running the 
 
 In my case I am running it in DataGrip, but you can use MySql Workbench or whatever floats your boat:
 
-
+![mysqlDocker7](https://user-images.githubusercontent.com/10457502/57586768-0e253700-74ea-11e9-8ef5-39d87d51273f.png)
