@@ -37,7 +37,7 @@ For mypassword obviously you want to put something different
 
 >Yes, I am well aware this horrible practice. Instead you should save the password as an environment variable and pass that in. When I tried that I had issues hence why it is not included. 
 
-## What this does:
+#### What this does:
 
 > **`run`** tells docker to run the image you specify later <br>
 > **`-d`** tells docker to run the container to run in detached mode so you can still use your terminal<br>
