@@ -2,9 +2,13 @@
 
 Mysql Workbench is the software installed by default on the VMs that we use in the class. If you are having issues accessing the VMs, then it’s recommended that you download it locally.
 
-### Why An Alternative?
+### Why An Alternative? <br>
 
-I personally found that Mysql Workbench is clunky and lacks a lot of the features I enjoy in an IDE. I personally decided not to use it. I did not like the idea of installing a software that I did not enjoy using. Instead I chose to use DataGrip, the IDE for databases provided by JetBrains.
+I personally found that Mysql Workbench is clunky and lacks a lot of the features I enjoy in an IDE. A few of the the features I was looking for were: dark mode, VIM commands, and intellisense. I personally decided not to use it, because I did not want to install a software that I did not enjoy using. I also wanted to get started using a solution that I would most likely carry on with me moving forward. Instead I chose to use DataGrip, the IDE for databases provided by JetBrains.
+
+DataGrip provides an environment which can be used with multiple different database
+languages. There are also a lot of different plugins that can be used to tailor
+the experience to your needs.
 
 ### Who Are They And How do I Get It?
 
