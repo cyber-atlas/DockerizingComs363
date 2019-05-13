@@ -14,5 +14,16 @@ JetBrains creates IDEs for a wide variety of programming languages, many of whic
 
 Once you have registered and gotten your educational license, you can download
 the software. 
+
 [DataGrip Download](https://www.jetbrains.com/datagrip/)
+
+## What Now?
+
+You can now use it to connect to your local Docker Mysql container. The
+instructions to do are outlined in the Mysql page on this site. 
+
+If using the VPN or on campus you can also connect to the provided Mysql server.
+The instructions provided with the course directly apply in this case. They are
+also very similar to the ones in the Mysql link, except the address is
+different.
 
