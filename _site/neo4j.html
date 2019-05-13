@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>[“Dockerizing Com S 363”]</title>
+<title>Neo4j Docker | [“Dockerizing Com S 363”]</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="[“Dockerizing Com S 363”]" />
+<meta property="og:title" content="Neo4j Docker" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="http://0.0.0.0:4000/neo4j.html" />
 <meta property="og:url" content="http://0.0.0.0:4000/neo4j.html" />
 <meta property="og:site_name" content="[“Dockerizing Com S 363”]" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://0.0.0.0:4000/neo4j.html","headline":"[“Dockerizing Com S 363”]","@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"http://0.0.0.0:4000/neo4j.html","headline":"Neo4j Docker","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=4d1d5e7eb092862676e4b75e39053da9a1446a60">
@@ -33,6 +33,7 @@
         <nav>
           <li class="fork"><a href="https://github.com/cyber-atlas/DockerizingComs363">View On GitHub</a></li>
           <li class="fork"><a href=/index.html>Home</a></li>
+          <li class="fork"><a href=/neo4j.html>Neo4j</a></li>
           
         </nav>
       </div><!-- end header -->
@@ -48,12 +49,45 @@
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
         </div>
 
-        <p>##Neo4j Docker</p>
+        <h2 id="neo4j-docker">Neo4j Docker</h2>
 
-<p>We use Neo4j in the class to learn graph databases.
-Thankfully, the official Neo4j guide on how to use it is very helpful.</p>
+<h3 id="about-neo4j-">About Neo4j <br /></h3>
+<p>We use Neo4j on Assignment 5 to learn about graph databases. We needed to
+install it on our computers and run it using the browser. Instead of adding more
+software on my system, I chose to use a Docker container running Neo4j. The
+official Neo4j Docker setup guide is very helpful with this.</p>
 
 <p><a href="https://neo4j.com/developer/docker-run-neo4j/">Their Guide</a></p>
+
+<h3 id="organizing-the-data-to-be-imported">Organizing The Data To Be Imported<br /></h3>
+<p>In the assignment we must modify our Neo4j configuration to allow for data to be
+imported from anywhere. Instead of modifying the configuration, I just copied
+the data to the import folder that we mapped in the previous step. To do so,
+copy the given <code class="highlighter-rouge">parts</code> folder to <code class="highlighter-rouge">neo4j/imports/</code> Where <code class="highlighter-rouge">neo4j</code> is
+the directory you created in the previous step.</p>
+
+<h4 id="showing-where-the-folder-is-">Showing Where The Folder Is <br /></h4>
+
+<p><img src="images/neo4j1.png" alt="Showing where the files are put" class="img-responsive" /></p>
+
+<h3 id="importing-the-data-">Importing The Data <br /></h3>
+<p>We were given instructions on how to import the data, but because the data is in
+a different location, we need to change the instructions. The portion of the
+command we need to modify:
+<br /></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOAD CSV WITH HEADERS FROM <span class="s1">'file:///C:/363SPR2019/parts/parts.csv'</span>
+</code></pre></div></div>
+<p><br />
+Instead we change it to: <br /></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOAD CSV WITH HEADERS FROM <span class="s1">'file:///parts/parts.csv'</span>
+</code></pre></div></div>
+<p><br />
+The other 2 imports need to be modified in the same way.</p>
+
+<h3 id="doing-the-assignment-">Doing The Assignment <br /></h3>
+<p>While doing the assignment we used the Neo4j Browser. To access this, navigate
+to <code class="highlighter-rouge">localhost:7474</code> and use the editor. There you will write and
+run your queries.</p>
 
 
       </section>
