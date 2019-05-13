@@ -10,7 +10,10 @@ An installation of Docker.
 This can be done in multiple ways. 
 
 ## Installing Docker: <br> 
-TODO finish this 
+
+**TODO** finish this <br>
+
+[Getting Setup](./installation.md)
 
 ## An Alternative To Mysql Workbench <br>
 DataGrip is a modern alternative to Mysql Workbench. Instructions for accessing
@@ -19,7 +22,9 @@ it are below.
 [DataGrip Info](./datagrip.md)
 
 
-## Our Implementation Of Mysql Server
+## Our Implementation Of Mysql Server<br>
+To set up a dockerized version of Mysql Server follow the instructions below.
+<br>
 
 [Mysql](./MysqlDocker.md)
 
@@ -30,5 +35,6 @@ to the instructions for setting it up.
 
 [Neo4j](./neo4j.md)
 
-## How We Can Set Up JSP
+## How We Can Set Up JSP <br>
 
+**TODO** 
