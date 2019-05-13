@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Heads Up | DockerizingComs363</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Heads Up" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://0.0.0.0:4000/MysqlDocker.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/MysqlDocker.html" />
+<meta property="og:site_name" content="DockerizingComs363" />
+<script type="application/ld+json">
+{"headline":"Heads Up","@type":"WebPage","url":"http://0.0.0.0:4000/MysqlDocker.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=8d150cffb80b8bc72793f0117763324e4b3ae5b2">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/cyber-atlas/DockerizingComs363">View On GitHub</a></li>
+          
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>DockerizingComs363</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/cyber-atlas">cyber-atlas</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h2 id="heads-up">Heads Up</h2>
+<p>This is a guide that helped me get MySql server up and running <strong>MUCH</strong> faster than the VMs. It’s especially nice if you’re off campus/having issues with the VMs. It allows you do do things locally with the power of your computer instead of the VM.</p>
+
+<h2 id="what-it-do">What it do</h2>
+<p>I ran this on Fedora 29 and have used a similar thing on the most recent OSX Mojave (I don’t wanna go check the exact version)</p>
+
+<p>If you don’t have docker downloaded and installed go ahead and do that</p>
+
+<p>Installation instructions for your OS from the documentation (they actually have good docs) <br />
+https://docs.docker.com/install/</p>
+
+<p>I used this for most of it: <br />
+https://www.serverlab.ca/tutorials/containers/docker/how-to-run-mysql-server-8-in-a-docker-container/</p>
+
+<h2 id="how-it-do">How It Do</h2>
+<p>Pull the docker image you want to use:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">user@computer:~$</span> docker pull mysql/mysql-server
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/10457502/57586762-0d8ca080-74ea-11e9-99be-315ac9273b0a.png" alt="mysqlDocker1" /></p>
+
+<p>This will create the directory  where you want to store the database information and such</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">user@computer:~$</span> mkdir <span class="nt">-p</span> /data/mysql
+</code></pre></div></div>
+<p><img src="https://user-images.githubusercontent.com/10457502/57586763-0e253700-74ea-11e9-9721-7edabec97458.png" alt="mysqlDocker2" /></p>
+
+<p>Run the docker image</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">user@computer:~$</span> docker run <span class="nt">-d</span> <span class="nt">-p</span> 3306:3306 <span class="nt">-v</span> /data/mysql:/var/lib/mysql <span class="nt">-e</span> <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>mypassword mysql/mysql-server 
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/10457502/57586764-0e253700-74ea-11e9-97a4-32739290a93b.png" alt="mysqlDocker3" /></p>
+
+<p>For mypassword obviously you want to put something different</p>
+
+<blockquote>
+  <p>Yes, I am well aware this horrible practice. Instead you should save the password as an environment variable and pass that in. When I tried that I had issues hence why it is not included.</p>
+</blockquote>
+
+<h3 id="what-this-does">What this does:</h3>
+
+<blockquote>
+  <p><strong><code class="highlighter-rouge">run</code></strong> tells docker to run the image you specify later <br />
+<strong><code class="highlighter-rouge">-d</code></strong> tells docker to run the container to run in detached mode so you can still use your terminal<br />
+<strong><code class="highlighter-rouge">-p</code></strong> tell docker to map your port 33306 to the machine port 3306 (default mysql port)<br /></p>
+  <blockquote>
+    <p>Ex of a different port mapping would be <strong><code class="highlighter-rouge">-p 1337:3306</code></strong> which would map mysql container port 3306 to port 1337 of your machine <br /></p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <p><strong><code class="highlighter-rouge">-v</code></strong> maps a volume (directory) on your drive to a volume on the machine <strong><code class="highlighter-rouge">&lt;your volume&gt;</code> : <code class="highlighter-rouge">&lt;docker machine’s volume&gt;</code></strong> <br />
+<strong><code class="highlighter-rouge">-e</code></strong> sets environment variables of your machine, in this case the mysql root password <br /></p>
+</blockquote>
+
+<p><em><strong>Note:</strong> I did not set a password since I already have one</em></p>
+
+<p>Let’s see if the container is running :</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">user@computer:~$</span> docker container <span class="nb">ls</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/10457502/57586765-0e253700-74ea-11e9-9720-03c418c758f9.png" alt="mysqlDocker4" /></p>
+
+<p>Now that the container is running you want to be able to use it:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">user@computer:~$</span> docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container name&gt; bash
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/10457502/57586766-0e253700-74ea-11e9-85c2-62dd36d47ae6.png" alt="mysqlDocker5" /></p>
+
+<p>Bam! Drops you into a root shell</p>
+
+<p><em><strong>Note:</strong> to exit bash type <code class="highlighter-rouge">exit</code></em></p>
+
+<p>Now to use mysql:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">-uroot</span> <span class="nt">-p</span>
+</code></pre></div></div>
+
+<p>Or</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">-p</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/10457502/57586767-0e253700-74ea-11e9-9c65-2b1fad6f96b4.png" alt="mysqlDocker6" /></p>
+
+<p>It will prompt you for a password. That will be the password you supplied in the first part. 
+In the mysql prompt you now can do your thing <br /></p>
+
+<p><em><strong>Note:</strong> to exit mysql type <code class="highlighter-rouge">quit</code></em></p>
+
+<p>To show databases:</p>
+<pre><code class="language-mysql">SHOW DATABASES;
+</code></pre>
+
+<p>To create databases:</p>
+<pre><code class="language-mysql">CREATE DATABASE databaseName;
+</code></pre>
+
+<p>To create a user:</p>
+<pre><code class="language-mysql">CREATE USER '&lt;username&gt;'@'localhost' IDENTIFIED BY '&lt;password&gt;';
+</code></pre>
+
+<p>Also according this the default password hashing mechanism in 8+ is sha2 which meets the encrypted format specs for <em>this section</em> <br /></p>
+
+<p>https://dev.mysql.com/doc/mysql-security-excerpt/8.0/en/caching-sha2-pluggable-authentication.html</p>
+
+<p>Give the user privileges:</p>
+<pre><code class="language-mysql">GRANT ALL PRIVILEGES ON databaseName.* TO ‘&lt;user&gt;’@'localhost';
+FLUSH PRIVILEGES;
+QUIT
+</code></pre>
+
+<p>Show the users and what hosts they can connect from:</p>
+<pre><code class="language-mysql">SELECT host, user FROM mysql.user;
+</code></pre>
+
+<p>It will display a table, for example like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------------+------------------+
+| host       | user             |
++------------+------------------+
+| %          | root             |
+| 127.0.0.1  | root             |
+| ::1        | root             |
+| localhost  | mysql.sys        |
+| localhost  | root             |
+| localhost  | sonar            |
++------------+------------------+
+</code></pre></div></div>
+
+<p>It has to contain a line with your database user and ‘%’ to works (% means “every IP addresses are allowed”). Example:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------------+------------------+
+| host       | user             |
++------------+------------------+
+| %          | root             |
++------------+------------------+
+</code></pre></div></div>
+
+<p>https://stackoverflow.com/questions/16287559/mysql-adding-user-for-remote-access</p>
+
+<p>How to create a user to use to connect to your database:</p>
+<pre><code class="language-mysql">CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypass';
+CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';
+</code></pre>
+
+<p>Now give them some privileges:</p>
+<pre><code class="language-mysql">GRANT ALL ON *.* TO 'myuser'@'localhost';
+GRANT ALL ON *.* TO 'myuser'@'%';
+</code></pre>
+
+<p>Then just a connector like you normally would. In this case we’re running the server locally (easiest way). You can also connect remotely, but that involves port forwarding and setting up dynmaic dns or a static IP which I won’t get into.</p>
+
+<p>In my case I am running it in DataGrip, but you can use MySql Workbench or whatever floats your boat:</p>
+
+<p><img src="https://user-images.githubusercontent.com/10457502/57586768-0e253700-74ea-11e9-8ef5-39d87d51273f.png" alt="mysqlDocker7" /></p>
+
+
+      </section>
+
+    </div>
+
+    
+  </body>
+</html>
