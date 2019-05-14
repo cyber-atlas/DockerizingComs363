@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Neo4j Docker | [“Dockerizing Com S 363”]</title>
 <meta name="generator" content="Jekyll v3.8.5" />
@@ -16,7 +21,7 @@
 {"@type":"WebPage","url":"http://0.0.0.0:4000/neo4j.html","headline":"Neo4j Docker","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=4d1d5e7eb092862676e4b75e39053da9a1446a60">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7d8d24a656f53b5d8f8ee50f7edeca6b45088e50">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -30,13 +35,20 @@
   </head>
   <body>
       <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/cyber-atlas/DockerizingComs363">View On GitHub</a></li>
-          <li class="fork"><a href=/index.html>Home</a></li>
-          <li class="fork"><a href=/installation.html>Getting
-          <li class="fork"><a href=/datagrip.html>DataGrip</a></li>
-          <li class="fork"><a href=/MysqlDocker.html>Mysql</a></li>
-          <li class="fork"><a href=/neo4j.html>Neo4j</a></li>
+        <nav class = "navbar navbar-expand-md bg-dark navbar-dark bg-faded">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!--- Ends button -->
+        <div class = "collapse navbar-collapse" id="collapsibleNavbar">
+	<ul class="navbar-nav">
+          <li class="fork nav-item"><a class="nav-link" href=/index.html>Home</a></li>
+          <li class="fork nav-item"><a class="nav-link" href=/installation.html>Getting
+          <li class="fork nav-item"><a class="nav-link" href=/datagrip.html>DataGrip</a></li>
+          <li class="fork nav-item"><a class="nav-link" href=/MysqlDocker.html>Mysql</a></li>
+          <li class="fork nav-item"><a class="nav-link" href=/neo4j.html>Neo4j</a></li>
+	  </ul>
+	  </div>
           
         </nav>
       </div><!-- end header -->
@@ -71,7 +83,7 @@ the directory you created in the previous step.</p>
 
 <h4 id="showing-where-the-folder-is-">Showing Where The Folder Is <br /></h4>
 
-<p><img src="images/neo4j1.png" alt="Showing where the files are put" class="img-responsive" /></p>
+<p><img src="/images/neo4j1.png" alt="Showing where the files are put" class="img-responsive" /></p>
 
 <h3 id="importing-the-data-">Importing The Data <br /></h3>
 <p>We were given instructions on how to import the data, but because the data is in

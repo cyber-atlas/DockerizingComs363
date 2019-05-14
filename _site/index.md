@@ -37,4 +37,6 @@ to the instructions for setting it up.
 
 ## How We Can Set Up JSP <br>
 
-**TODO** 
+**TODO** <br>
+
+[JSP](./JSP.md)
