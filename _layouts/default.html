@@ -24,20 +24,23 @@
   </head>
   <body>
       <div id="header">
-        <nav class = "navbar navbar-expand-md bg-dark navbar-dark bg-faded">
+        <nav class = "navbar navbar-expand-sm bg-dark navbar-dark bg-faded">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<!--- Ends button -->
-        <div class = "collapse navbar-collapse" id="collapsibleNavbar">
-	<ul class="navbar-nav">
-          <li class="fork nav-item"><a class="nav-link" href={{"index.html"|relative_url}}>Home</a></li>
-          <li class="fork nav-item"><a class="nav-link" href={{"installation.html"|relative_url}}>Getting
-          <li class="fork nav-item"><a class="nav-link" href={{"datagrip.html"|relative_url}}>DataGrip</a></li>
-          <li class="fork nav-item"><a class="nav-link" href={{"MysqlDocker.html"|relative_url}}>Mysql</a></li>
-          <li class="fork nav-item"><a class="nav-link" href={{"neo4j.html"|relative_url}}>Neo4j</a></li>
+        <div class="container px-0 mx-0">
+        <div class = "collapse navbar-collapse mx-0 px-0" id="collapsibleNavbar">
+	<ul class="navbar-nav nav-fill w-100">
+          <li class="nav-item mx-auto"><a class="nav-link" href={{"index.html"|relative_url}}>Home</a></li>
+          <li class="nav-item mx-auto"><a class="nav-link" href={{"installation.html"|relative_url}}>Getting Started</a></li>
+          <li class="nav-item mx-auto"><a class="nav-link" href={{"datagrip.html"|relative_url}}>DataGrip</a></li>
+          <li class="nav-item mx-auto"><a class="nav-link" href={{"MysqlDocker.html"|relative_url}}>Mysql</a></li>
+          <li class=" nav-item mx-auto"><a class="nav-link" href={{"neo4j.html"|relative_url}}>Neo4j</a></li>
+          <li class=" nav-item mx-auto"><a class="nav-link" href={{"JSP.html"|relative_url}}>JSP</a></li>
 	  </ul>
 	  </div>
+        </div>
           {% if site.show_downloads %}
             <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
             <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
