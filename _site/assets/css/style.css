@@ -276,4 +276,5 @@ section #title .credits.right { float: right; }
   section { margin-top: 40px; }
   nav { display: none; } }
 
-.navbar{background: transparent}
+/*Remove the background on the navbar*/
+.navbar {background: transparent;} 
